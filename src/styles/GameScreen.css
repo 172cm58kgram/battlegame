@@ -1,0 +1,241 @@
+/* ゲーム全体のコンテナ */
+.game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/space_station_background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* フィールドを固定 */
+.game-field {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+/* プレイヤー */
+.player {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 15px red;
+  transform: translate(-50%, -50%);
+}
+
+/* 敵 (コンピュータ) */
+.enemy {
+  position: absolute;
+  width: 20px; /* プレイヤーと同じサイズ */
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  box-shadow: 0 0 15px cyan;
+  transform: translate(-50%, -50%); /* 位置ズレ防止 */
+}
+
+/* コイン */
+.coin {
+  position: absolute;
+  width: 14px; /* 以前より視認性を向上 */
+  height: 14px;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 6px yellow; /* 影を少し強調 */
+  transform: translate(-50%, -50%);
+}
+
+.item {
+  position: absolute;
+  width: calc(1.5vw); /* 画面サイズに応じた動的サイズ */
+  height: calc(1.5vw);
+  max-width: 20px; /* 最大サイズを設定 */
+  max-height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+}
+
+/* スコアボード */
+.scoreboard {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  z-index: 20;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  z-index: 50;
+}
+
+.game-over h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.game-over button {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-over button:hover {
+  background-color: #ddd;
+}
+
+/* ゲームを中断するボタン */
+.home-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.home-button:hover {
+  background-color: #ddd;
+}
+
+.use-item-button {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease-in-out;
+  z-index: 100;  /* 追加 */
+}
+
+.use-item-button:hover {
+  background-color: #e67e22;
+}
+
+.use-item-button:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+.juku-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 40px;  /* 余白を増やして大きく */
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  width: 60vw;  /* 幅を大きく */
+  max-width: 500px;  /* 最大幅を設定 */
+}
+
+.juku-modal h2 {
+  font-size: 2rem;  /* タイトルを大きく */
+  margin-bottom: 10px;
+}
+
+.juku-modal p {
+  font-size: 2.5rem;  /* 問題の数字を大きく */
+  font-weight: bold;
+  color: #ffcc00;  /* 視認性を上げるために黄色 */
+  text-shadow: 0 0 10px #ffcc00;  /* 光るエフェクト */
+}
+
+.juku-modal input {
+  width: 100px;
+  height: 50px;
+  font-size: 2rem;  /* 入力する数字も見やすく */
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.juku-modal button {
+  display: block;
+  width: 120px;
+  height: 50px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 15px auto 0;
+  border-radius: 8px;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 87, 51, 0.9);
+  transition: 0.2s;
+}
+
+.juku-modal button:hover {
+  background-color: #ff2e00;
+  box-shadow: 0 0 15px rgba(255, 47, 0, 1);
+}
+
+.elapsed-time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
