@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/battlegame/static/css/main.26ef83fb.css",
-    "main.js": "/battlegame/static/js/main.6e9db577.js",
+    "main.js": "/battlegame/static/js/main.c7714dae.js",
     "static/media/hammer.gif": "/battlegame/static/media/hammer.28f4abf5f67f8e12d7cd.gif",
     "static/media/juku.gif": "/battlegame/static/media/juku.013022b42be390d2cceb.gif",
     "static/media/space_station_background.png": "/battlegame/static/media/space_station_background.40ab1f6e6aca98620023.png",
@@ -9,10 +9,10 @@
     "static/media/juku.png": "/battlegame/static/media/juku.d1cfe3b8eaa00e79bb11.png",
     "index.html": "/battlegame/index.html",
     "main.26ef83fb.css.map": "/battlegame/static/css/main.26ef83fb.css.map",
-    "main.6e9db577.js.map": "/battlegame/static/js/main.6e9db577.js.map"
+    "main.c7714dae.js.map": "/battlegame/static/js/main.c7714dae.js.map"
   },
   "entrypoints": [
     "static/css/main.26ef83fb.css",
-    "static/js/main.6e9db577.js"
+    "static/js/main.c7714dae.js"
   ]
 }
