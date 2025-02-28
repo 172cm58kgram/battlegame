@@ -17,8 +17,8 @@
 /* フィールドを固定 */
 .game-field {
   position: relative;
-  width: 1000px;
-  height: 1000px;
+  width: min(90vw, 90vh); /* 画面の90%を基準にする */
+  height: min(90vw, 90vh);
   background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid white;
   overflow: hidden;

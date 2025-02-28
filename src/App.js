@@ -1,9 +1,9 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"; // ✅ `HashRouter` は削除
 import HomeScreen from "./components/HomeScreen";
 import GameScreen from "./components/GameScreen";
 import RulesScreen from "./components/RulesScreen";
-import StatisticsScreen from "./components/StatisticsScreen"; // 戦績画面のインポート
+import StatisticsScreen from "./components/StatisticsScreen";
 
 function App() {
   return (
