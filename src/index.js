@@ -1,13 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom/client";  
-import { HashRouter } from "react-router-dom"; // ✅ `HashRouter` はここでのみ使用
-import App from "./App";
+import ReactDOM from "react-dom";
+import { HashRouter as Router } from "react-router-dom";  // 🔹 GitHub Pages対応
+import App from "./App"; // `App` を別ファイルから読み込む
 import "./styles.css"; // スタイル適用
 
-function App() {
-  return (
+ReactDOM.render(
+  <React.StrictMode>
     <Router>
-      <div>...</div>
+      <App />
     </Router>
-  );
-}
+  </React.StrictMode>,
+  document.getElementById("root")
+);
