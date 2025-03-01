@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://172cm58kgram.github.io/battlegame/",
+  "homepage": "https://172cm58kgram.github.io/battlegame",
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
